@@ -3,5 +3,6 @@
   :dependencies [[org.clojure/clojure "1.4.0"]
 									[clojure-csv "2.0.0-alpha2"]
 									 [postgresql/postgresql "9.1-901.jdbc4"]
+									 [sqlitejdbc "0.5.6"]
 	                 [korma "0.3.0-beta10"]]
 	:main data-loader.core)

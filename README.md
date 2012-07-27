@@ -4,6 +4,7 @@ hockeydb
 hockeydb contains code to load the Hockey Database CSV files into databases for multiple RDBMSs. Has the data-loader code and SCHEMA/Data .
 I've included the Hockey Database README file with the addition of the id column I added to the master table so I could add a primary key to the table.
 
+=============================
 Hockey Database version 7.0, Jun. 23, 2012
 
 This database is maintained through the hockey-databank Yahoo group,

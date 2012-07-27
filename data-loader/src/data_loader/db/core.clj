@@ -1,31 +1,30 @@
 (ns data-loader.db.core
-  (:require [clojure.java.jdbc :as sql]))
+  (:require [clojure.java.jdbc :as sql]
+						[data-loader.db.connections :as conns]))
 
-(def pg-conn {:subprotocol "postgresql" 
-                   :classname "org.postgresql.Driver",
-                   :subname "//localhost/hockeydb",
-                   :user "rob", :password "itsmerob"})
 
-(defn run-sql [sql-vector]
-	(sql/with-connection pg-conn
+(defn run-sql [db-conn sql-vector]
+	(sql/with-connection db-conn
         (sql/with-query-results rows
           sql-vector 
           (into [] rows))))
 
-(defn run-insert [table columns values]
-	(sql/with-connection pg-conn
+(defn run-insert [db-conn table columns values]
+	(sql/with-connection db-conn
 		(sql/insert-values
 			table
 			columns
 			values)))
 			
-(defn insert-abbrev [{:keys [Type Code Fullname]}]
-	(run-insert :abbrev
+(defn insert-abbrev [{:keys [Type Code Fullname db-conn]}]
+	(run-insert db-conn 
+		:abbrev
 		[:Type :Code :Fullname]
 		[Type Code Fullname]))
 
-(defn insert-coaches [{:keys [coachID year tmID lgID stint notes g w l t postg postw postl postt]}]
-	(run-insert :coaches 
+(defn insert-coaches [{:keys [coachID year tmID lgID stint notes g w l t postg postw postl postt db-conn]}]
+	(run-insert db-conn 
+			:coaches 
 		 					[:coachID :year :tmID :lgID :stint :notes :g :w :l :t :postg :postw :postl :postt]
 							[coachID (Integer. (if (clojure.string/blank? year) "0" year)) tmID lgID 
 							(Integer. (if (clojure.string/blank? stint) "0" stint)) 
@@ -39,8 +38,8 @@
 							(Integer. (if (clojure.string/blank? postl) "0" postl))
 							(Integer. (if (clojure.string/blank? postt) "0" postt))]))
 
-(defn insert-coaches-beta [{:keys [coachID year tmID lgID stint notes g w l t otl postg postw postl postt]}]
-	(run-insert :coaches_beta 
+(defn insert-coaches-beta [{:keys [coachID year tmID lgID stint notes g w l t otl postg postw postl postt db-conn]}]
+	(run-insert db-conn :coaches_beta 
 		 					[:coachID :year :tmID :lgID :stint :notes :g :w :l :t :otl :postg :postw :postl :postt]
 							[coachID 
 							(Integer. (if (clojure.string/blank? year) "0" year)) 
@@ -57,13 +56,14 @@
 							(Integer. (if (clojure.string/blank? postl) "0" postl))
 							(Integer. (if (clojure.string/blank? postt) "0" postt))]))
 
-(defn insert-coaches-awards [{:keys [coachID award year lgID note]}]
-	(run-insert :awardscoaches 
+(defn insert-coaches-awards [{:keys [coachID award year lgID note db-conn]}]
+	(run-insert db-conn 
+			:awardscoaches 
 		 					[:coachID :award :year :lgID :note]
 							[coachID award (Integer. (if (clojure.string/blank? year) "0" year)) lgID note]))
 
-(defn insert-combined-shutouts [{:keys [year month date tmID oppID RP IDgoalie1 IDgoalie2]}]
-	(run-insert :combinedshutouts 
+(defn insert-combined-shutouts [{:keys [year month date tmID oppID RP IDgoalie1 IDgoalie2 db-conn]}]
+	(run-insert db-conn :combinedshutouts 
 		 					[:year :month :date :tmID :oppID :RP :IDgoalie1 :IDgoalie2]
 							[(Integer. (if (clojure.string/blank? year) "0" year))
 							 (Integer. (if (clojure.string/blank? month) "0" month))
@@ -71,8 +71,9 @@
 							tmID oppID RP IDgoalie1 IDgoalie2]))
 
 (defn insert-goalies [{:keys [playerID year stint tmID lgID GP Min W L TOL ENG SHO GA SA 
-	                            PostGP PostMin PostW PostL PostT PostENG PostSHO PostGA PostSA]}]
-	(run-insert :goalies 
+	                            PostGP PostMin PostW PostL PostT PostENG PostSHO PostGA PostSA db-conn]}]
+	(run-insert db-conn 
+		:goalies 
 						  [:playerID :year :stint :tmID :lgID :GP :Min :W :L :TOL :ENG :SHO :GA :SA 
 								:PostGP :PostMin :PostW :PostL :PostT :PostENG :PostSHO :PostGA :PostSA]
 							[playerID 	
@@ -98,8 +99,9 @@
 							(Integer. (if (clojure.string/blank? PostGA) "0" PostGA))
 							(Integer. (if (clojure.string/blank? PostSA) "0" PostSA))]))
 
-(defn insert-goaliessc [{:keys [playerID year tmID lgID GP Min W L T SHO GA]}]
-	(run-insert :goaliessc 
+(defn insert-goaliessc [{:keys [playerID year tmID lgID GP Min W L T SHO GA db-conn]}]
+	(run-insert db-conn
+		:goaliessc 
 						  [:playerID :year :tmID :lgID :GP :Min :W :L :T :SHO :GA]
 							[playerID 
 							 (Integer. (if (clojure.string/blank? year) "0" year)) 
@@ -113,8 +115,8 @@
 								(Integer. (if (clojure.string/blank? GA) "0" GA))
 								]))
 
-(defn insert-goaliesshootouts [{:keys [playerID year stint tmID W L SA GA]}]
-	(run-insert :goaliesshootout 
+(defn insert-goaliesshootouts [{:keys [playerID year stint tmID W L SA GA db-conn]}]
+	(run-insert db-conn :goaliesshootout 
 						  [:playerID :year :stint :tmID :W :L :SA :GA]
 							[playerID 
 							  (Integer. (if (clojure.string/blank? year) "0" year)) 
@@ -126,28 +128,27 @@
 								(Integer. (if (clojure.string/blank? GA) "0" GA))
 								]))
 
-(defn insert-hof [{:keys [year hofID name category]}]
-	(run-insert :hof
+(defn insert-hof [{:keys [year hofID name category db-conn]}]
+	(run-insert db-conn :hof
 		[:year :hofID :name :category]
 		[(Integer. (if (clojure.string/blank? year) "0" year)) 
 		 hofID name category]))
 
-(defn insert-players-awards [{:keys [playerID award year lgID note pos]}]
-	(run-insert :awardsplayers 
+(defn insert-players-awards [{:keys [playerID award year lgID note pos db-conn]}]
+	(run-insert db-conn :awardsplayers 
 		 					[:playerID :award :year :lgID :note :pos]
 							[playerID award (Integer. (if (clojure.string/blank? year) "0" year)) lgID note pos]))
 												
-(defn insert-misc-awards [{:keys [name ID award year lgID note]}]
-	(run-insert :awardsmisc 
+(defn insert-misc-awards [{:keys [name ID award year lgID note db-conn]}]
+	(run-insert db-conn :awardsmisc 
 		 					[:name :ID :award :year :lgID :note]
 							[name ID award (Integer. (if (clojure.string/blank? year) "0" year)) lgID note]))
 
 
 (defn insert-master [{:keys [playerID coachID hofID firstName lastName nameNote nameGiven nameNick height weight shootCatch legendsID ihdbID 
 														 hrefID firstNHL lastNHL firstWHA lastWHA pos birthYear birthMon birthDay birthCountry birthState birthCity deathYear 
-															deathMon deathDay deathCountry deathState deathCity]}] 
-	(sql/with-connection pg-conn
-		(sql/insert-values
+															deathMon deathDay deathCountry deathState deathCity db-conn]}] 
+	(run-insert db-conn
 		   :master
 		   [:playerID :coachID :hofID :firstName :lastName :nameNote :nameGiven :height :weight :shootCatch :legendsID :ihdbID :hrefID
 				:firstNHL :lastNHL :firstWHA :lastWHA :pos :birthYear :birthMon :birthDay :birthCountry :birthState :birthCity :deathYear 
@@ -171,10 +172,10 @@
 					(Integer. (if (clojure.string/blank? deathMon) "0" deathMon)) 
 					(Integer. (if (clojure.string/blank? deathDay) "0" deathDay)) 
 					deathCountry deathState deathCity
-					])))
+					]))
 
-(defn insert-scoringsc [{:keys [playerID year stint tmID lgID pos GP G A Pts PIM]}]
-	(run-insert :scoringsc
+(defn insert-scoringsc [{:keys [playerID year stint tmID lgID pos GP G A Pts PIM db-conn]}]
+	(run-insert db-conn :scoringsc
 						  [:playerID :year :stint :tmID :lgID :pos :GP :G :A :Pts :PIM ]
 							[playerID 	
 							(Integer. (if (clojure.string/blank? year) "0" year)) 
@@ -186,8 +187,8 @@
 							(Integer. (if (clojure.string/blank? Pts) "0" Pts))
 							(Integer. (if (clojure.string/blank? PIM) "0" PIM))]))
 
-(defn insert-scoringshootout [{:keys [playerID year stint tmID S G GDG]}]
-	(run-insert :scoringshootout
+(defn insert-scoringshootout [{:keys [playerID year stint tmID S G GDG db-conn]}]
+	(run-insert db-conn :scoringshootout
 						  [:playerID :year :stint :tmID :S :G :GDG ]
 							[playerID 	
 							(Integer. (if (clojure.string/blank? year) "0" year)) 
@@ -207,8 +208,8 @@
 
 (defn insert-scoring [{:keys [playerID year stint tmID lgID pos GP G A Pts PIM PlusMinus PPG PPA SHG 
 	                            SHA GWG GTG SOG PostGP PostG PostA PostPts PostPIM PostPlusMinus PostPPG 
-															PostPPA PostSHG PostSHA PostGWG PostSOG]}]
-	(run-insert :scoring 
+															PostPPA PostSHG PostSHA PostGWG PostSOG db-conn]}]
+	(run-insert db-conn :scoring 
 						  [:playerID :year :stint :tmID :lgID :pos :GP :G :A :Pts :PIM :PlusMinus :PPG :PPA :SHG 
 							 :SHA :GWG :GTG :SOG :PostGP :PostG :PostA :PostPts :PostPIM :PostPlusMinus :PostPPG 
 							 :PostPPA :PostSHG :PostSHA :PostGWG :PostSOG]
