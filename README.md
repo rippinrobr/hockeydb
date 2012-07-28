@@ -115,13 +115,12 @@ However, the league is identified as WCHL throughout the database for all
 seasons.
 
 1.1 References and acknowledgements
------------------------------------
-
+===================================
 A variety of sources were consulted while constructing this database.  These
 are listed below in no particular order.
 
 Books:
-======
+------
   National Hockey League Guide (various years)
   
   National Hockey League Official Record Book (1982-83 and 1983-84)
@@ -151,11 +150,11 @@ Books:
   The Trail of the Stanley Cup (Vol. 1, 2, and 3), by Charles L. Coleman
 
 Periodicals:
-
+------------
   The Sporting News
 
 On-line sources:
-
+----------------
   ESPN.com
         http://www.espn.com/nhl/statistics
 
@@ -217,7 +216,7 @@ On-line sources:
         http://sports.yahoo.com/nhl
 
 Thanks to the following individuals:
-
+------------------------------------
 * Ralph Dinger (NHL Publishing / Dan Diamond and Associates) has confirmed a
   number of corrections to errors found in the NHL's official statistics.
   Thanks also to Justin Kubatko of hockey-reference.com for a number of
@@ -240,10 +239,8 @@ An acknowledgement is also given to the team led by Sean Forman and Sean Lahman
 that has developed and maintained the Lahman baseball database.  This database
 follows the same general design.
 
----------------------------------------------------------------------------
-
 1.2 Revision history
-
+====================
 1.0   Jan. 4, 2007   Initial release
 1.1   Feb. 1, 2007   Major revisions to early NHL data; separate tables for
                      early Stanley Cup finals, three separate awards tables;
@@ -261,36 +258,52 @@ follows the same general design.
 5.0   Jun. 24, 2010  2009-10 update
 6.0   Jun. 26, 2011  2010-11 update
 
----------------------------------------------------------------------------
-
 2.0 Tables
-
+==========
 Master              Names and biographical information
+
 Scoring             Scoring statistics
+
 ScoringSup          Supplemental scoring statistics
+
 ScoringSC           Scoring for Stanley Cup finals, 1917-18 through 1925-26
+
 ScoringShootout     Scoring statistics for shootouts
+
 Goalies             Goaltending statistics
+
 GoaliesSC           Goaltending for Stanley Cup finals, 1917-18 through 1925-26
+
 GoaliesShootout     Goaltending statistics for shootouts
+
 AwardsPlayers       Player awards, trophies, postseason all-star teams
+
 AwardsCoaches       Coaches awards, trophies, postseason all-star teams
+
 AwardsMisc          Miscellaneous awards
+
 Coaches             Coaching statistics
+
 Teams               Team regular season statistics
+
 TeamsPost           Team postseason statistics
+
 TeamsSC             Team Stanley Cup finals statistics, 1917-18 through 1925-26
+
 TeamsHalf           First half / second half standings, 1917-18 through 1920-21
+
 TeamSplits          Team home/road and monthly splits
+
 TeamVsTeam          Team vs. team results
+
 SeriesPost          Postseason series
+
 CombinedShutouts    List of combined shutouts
+
 abbrev              Abbreviations used in Teams and SeriesPost tables
 
----------------------------------------------------------------------------
-
 2.1 Master table
-
+=================
 id					Generated id for primary key value
 playerID            Player ID
 coachID             Coach ID
