@@ -46,7 +46,9 @@ consequences arising from the use of the information presented.
 Contents
 
 1.0   Leagues
-1.1   References and acknowledgements
+
+  1.1   References and acknowledgements
+  
 1.2   Revision history
 2.0   Tables
 2.1   Master table
