@@ -41,10 +41,8 @@ agreement that the Hockey Databank project makes no guarantees regarding the
 accuracy of the data supplied, and will not be held responsible for any
 consequences arising from the use of the information presented. 
 
----------------------------------------------------------------------------
-
 Contents
-
+--------
 1.0   Leagues
 
   1.1   References and acknowledgements
@@ -97,10 +95,9 @@ Contents
 
 3.0   NHL data availability
 
----------------------------------------------------------------------------
 
 1.0 Leagues
-
+-----------
 This database includes the following leagues, generally recognized as "major":
 
 National Hockey Association (NHA), 1909-10 - 1916-17
@@ -117,15 +114,14 @@ The WCHL was renamed the Western Hockey League for the 1925-26 season.
 However, the league is identified as WCHL throughout the database for all
 seasons.
 
----------------------------------------------------------------------------
-
 1.1 References and acknowledgements
+-----------------------------------
 
 A variety of sources were consulted while constructing this database.  These
 are listed below in no particular order.
 
 Books:
-
+======
   National Hockey League Guide (various years)
   
   National Hockey League Official Record Book (1982-83 and 1983-84)
