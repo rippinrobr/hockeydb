@@ -48,30 +48,53 @@ Contents
 1.0   Leagues
 
   1.1   References and acknowledgements
-  
-1.2   Revision history
+
+  1.2   Revision history
+
 2.0   Tables
+
 2.1   Master table
+
 2.2   Scoring table
+
 2.3   ScoringSup table
+
 2.4   ScoringSC table
+
 2.5   ScoringShootout table
+
 2.6   Goalies table
+
 2.7   GoaliesSC table
+
 2.8   GoaliesShootout table
+
 2.9   AwardsPlayers table
+
 2.10  AwardsCoaches table
+
 2.11  AwardsMisc table
+
 2.12  Coaches table
+
 2.13  Teams table
+
 2.14  TeamsPost table
+
 2.15  TeamsSC table
+
 2.16  TeamsHalf table
+
 2.17  TeamSplits table
+
 2.18  TeamVsTeam table
+
 2.19  SeriesPost table
+
 2.20  CombinedShutouts table
+
 2.21  HOF table
+
 3.0   NHL data availability
 
 ---------------------------------------------------------------------------
@@ -81,9 +104,13 @@ Contents
 This database includes the following leagues, generally recognized as "major":
 
 National Hockey Association (NHA), 1909-10 - 1916-17
+
 National Hockey League (NHL), 1917-18 through present
+
 Pacific Coast Hockey Association (PCHA), 1911-12 - 1923-24
+
 Western Canada Hockey League (WCHL), 1921-22 - 1925-26
+
 World Hockey Association (WHA), 1972-73 through 1978-79
 
 The WCHL was renamed the Western Hockey League for the 1925-26 season.
