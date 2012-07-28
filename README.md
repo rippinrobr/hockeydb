@@ -242,25 +242,36 @@ follows the same general design.
 1.2 Revision history
 ====================
 1.0   Jan. 4, 2007   Initial release
+
 1.1   Feb. 1, 2007   Major revisions to early NHL data; separate tables for
                      early Stanley Cup finals, three separate awards tables;
                      added TeamsHalf table; expanded WHA stats
+
 1.11  Feb. 5, 2007   Bug fix
+
 2.0   Jun. 11, 2007  2006-07 update; added NHA, PCHA, and WCHL; added
                      TeamSplits and TeamVsTeam tables
+
 2.01  Jun. 15, 2007  Added 2006-07 award winners
+
 2.1   Oct. 10, 2007  Added PPA/SHA/GTG; SeriesPost and CombinedShutouts tables;
                      many corrections
+
 2.2   Jan. 16, 2008  Added GoaliesShootout and ScoringShootout
+
 3.0   Jun. 14, 2008  2007-08 update; expanded Master table
+
 3.1   Jan. 15, 2009  Statistical corrections
+
 4.0   Jun. 18, 2009  2008-09 update
+
 5.0   Jun. 24, 2010  2009-10 update
+
 6.0   Jun. 26, 2011  2010-11 update
 
 2.0 Tables
 ==========
-Master              Names and biographical information
+Master				Names and biographical information
 
 Scoring             Scoring statistics
 
