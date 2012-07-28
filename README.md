@@ -1,9 +1,11 @@
 hockeydb
 ========
 
-hockeydb contains code to load the Hockey Database CSV files into databases for multiple RDBMSs. Has the data-loader code and SCHEMA/Data .
+hockeydb contains code to load the Hockey Database CSV files into databases for multiple RDBMSs. The database structure is exactly the same as the CSV files
+except for the Master.csv file, for the master table I added an id column so I could us it as a primary key.  All other tables mimic the CSV fils.
 I've included the Hockey Database README file with the addition of the id column I added to the master table so I could add a primary key to the table.
 
+The Hockey Database README starts below
 =============================
 Hockey Database version 7.0, Jun. 23, 2012
 
@@ -17,7 +19,7 @@ List owner:     hockey-databank-owner@yahoogroups.com
 
 ---------------------------------------------------------------------------
 
-Copyright Notice
+==Copyright Notice
 
 The Hockey Databank project allows for free usage of its data, including the
 production of a commercial product based upon the data, subject to the terms
