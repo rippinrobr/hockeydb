@@ -13,17 +13,20 @@ This database is maintained through the hockey-databank Yahoo group,
 http://sports.groups.yahoo.com/group/hockey-databank.
 
 Post message:   hockey-databank@yahoogroups.com
+
 Subscribe:      hockey-databank-subscribe@yahoogroups.com
+
 Unsubscribe:    hockey-databank-unsubscribe@yahoogroups.com
+
 List owner:     hockey-databank-owner@yahoogroups.com
 
----------------------------------------------------------------------------
-
-==Copyright Notice
+Copyright Notice
+----------------
 
 The Hockey Databank project allows for free usage of its data, including the
 production of a commercial product based upon the data, subject to the terms
 outlined below. 
+
 
 1) In exchange for any usage of data, in whole or in part, you agree to display
 the following statement prominently and in its entirety on your end product:
