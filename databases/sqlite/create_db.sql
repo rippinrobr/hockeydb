@@ -1,4 +1,3 @@
-/*
 DROP TABLE abbrev;
 CREATE TABLE abbrev(
   type varchar(16) NOT NULL,
@@ -246,8 +245,8 @@ CREATE TABLE scoringsc(
   pim integer NOT NULL DEFAULT 0,
   PRIMARY KEY (playerid , year , stint , tmid , pos )
 );
-*/
 
+-- DROP TABLE  scoringshootout;
 CREATE TABLE scoringshootout(
   playerid varchar(10) NOT NULL,
   year integer NOT NULL,
@@ -259,3 +258,177 @@ CREATE TABLE scoringshootout(
   PRIMARY KEY (playerid , year , stint , tmid )
 );
 
+-- DROP TABLE scoringsup;
+CREATE TABLE scoringsup(
+  playerid varchar(10) NOT NULL,
+  year integer NOT NULL,
+  ppa integer,
+  sha integer,
+  PRIMARY KEY (playerid , year )
+);
+
+-- DROP TABLE seriespost;
+CREATE TABLE seriespost(
+  year integer NOT NULL,
+  round varchar(4) NOT NULL,
+  series varchar(4) NOT NULL DEFAULT '',
+  tmidwinner varchar(10) NOT NULL,
+  lgidwinner varchar(10) NOT NULL,
+  tmidloser varchar(10) NOT NULL,
+  lgidloser varchar(10) NOT NULL,
+  w integer NOT NULL DEFAULT 0,
+  l integer NOT NULL DEFAULT 0,
+  t integer NOT NULL DEFAULT 0,
+  goalswinner integer NOT NULL DEFAULT 0,
+  goalsloser integer NOT NULL DEFAULT 0,
+  note varchar(4),
+  PRIMARY KEY (year , round , tmidwinner )
+);
+
+-- DROP TABLE teamsplits;
+CREATE TABLE teamsplits
+(
+  year integer NOT NULL,
+  lgid varchar(4) NOT NULL,
+  tmid varchar(4) NOT NULL,
+  hw integer NOT NULL,
+  hl integer NOT NULL,
+  ht integer NOT NULL DEFAULT 0,
+  hotl integer,
+  rw integer NOT NULL,
+  rl integer NOT NULL,
+  rt integer NOT NULL DEFAULT 0,
+  rotl integer,
+  sepw integer,
+  sepl integer,
+  sept integer,
+  sepol integer,
+  octw integer,
+  octl integer,
+  octt integer,
+  octol integer,
+  novw integer,
+  novl integer,
+  novt integer,
+  novol integer,
+  decw integer,
+  decl integer,
+  dect integer,
+  decol integer,
+  janw integer,
+  janl integer,
+  jant integer,
+  janol integer,
+  febw integer,
+  febl integer,
+  febt integer,
+  febol integer,
+  marw integer,
+  marl integer,
+  mart integer,
+  marol integer,
+  aprw integer,
+  aprl integer,
+  aprt integer,
+  aprol integer,
+  PRIMARY KEY (year , lgid , tmid )
+);
+
+-- DROP TABLE teamvsteam;
+CREATE TABLE teamvsteam
+(
+  year integer NOT NULL,
+  lgid varchar(4) NOT NULL,
+  tmid varchar(3) NOT NULL,
+  oppid varchar(3) NOT NULL,
+  w integer NOT NULL,
+  l integer NOT NULL,
+  t integer NOT NULL DEFAULT 0,
+  otl integer,
+  PRIMARY KEY (year , lgid , tmid , oppid )
+);
+
+-- DROP TABLE teams;
+CREATE TABLE teams
+(
+  year integer NOT NULL,
+  lgid varchar(4) NOT NULL,
+  tmid varchar(3) NOT NULL,
+  franchid varchar(3) NOT NULL,
+  confid varchar(2) NOT NULL DEFAULT '',
+  divid varchar(2) NOT NULL DEFAULT '',
+  rank integer NOT NULL,
+  playoff varchar(6) NOT NULL DEFAULT '',
+  g integer NOT NULL,
+  w integer NOT NULL DEFAULT 0,
+  l integer NOT NULL DEFAULT 0,
+  t integer NOT NULL DEFAULT 0,
+  otl integer,
+  pts integer NOT NULL DEFAULT 0,
+  sow integer,
+  sol integer,
+  gf integer NOT NULL DEFAULT 0,
+  ga integer NOT NULL DEFAULT 0,
+  name varchar(48) NOT NULL,
+  pim integer,
+  benchminor integer,
+  ppg integer,
+  ppc integer,
+  sha integer,
+  pkg integer,
+  pkc integer,
+  shf integer,
+  PRIMARY KEY (year , lgid , tmid )
+);
+
+-- DROP TABLE teamshalf;
+CREATE TABLE teamshalf(
+  year integer NOT NULL,
+  lgid varchar(4) NOT NULL,
+  tmid varchar(3) NOT NULL,
+  half integer NOT NULL,
+  rank integer NOT NULL,
+  g integer NOT NULL,
+  w integer NOT NULL DEFAULT 0,
+  l integer NOT NULL DEFAULT 0,
+  t integer NOT NULL DEFAULT 0,
+  gf integer NOT NULL,
+  ga integer NOT NULL,
+  PRIMARY KEY (year , lgid , tmid , half )
+);
+
+-- DROP TABLE teamspost;
+CREATE TABLE teamspost(
+  year integer NOT NULL,
+  lgid varchar(4) NOT NULL,
+  tmid varchar(3) NOT NULL,
+  g integer NOT NULL,
+  w integer NOT NULL DEFAULT 0,
+  l integer NOT NULL DEFAULT 0,
+  t integer NOT NULL DEFAULT 0,
+  gf integer NOT NULL DEFAULT 0,
+  ga integer NOT NULL DEFAULT 0,
+  benchminor integer,
+  ppg integer,
+  ppc integer,
+  sha integer,
+  pkg integer,
+  pkc integer,
+  shf integer,
+  PRIMARY KEY (year , lgid , tmid )
+);
+
+-- DROP TABLE teamssc;
+CREATE TABLE teamssc(
+  year integer NOT NULL,
+  lgid varchar(4) NOT NULL,
+  tmid varchar(3) NOT NULL,
+  g integer NOT NULL,
+  w integer NOT NULL DEFAULT 0,
+  l integer NOT NULL DEFAULT 0,
+  t integer NOT NULL DEFAULT 0,
+  gf integer NOT NULL DEFAULT 0,
+  ga integer NOT NULL DEFAULT 0,
+  pim integer,
+  PRIMARY KEY (year , lgid , tmid )
+);

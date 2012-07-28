@@ -198,8 +198,8 @@
 							(Integer. (if (clojure.string/blank? G) "0" G)) 
 							(Integer. (if (clojure.string/blank? GDG) "0" GDG))]))
 
-(defn insert-scoringsup [{:keys [playerID year PPA SHA]}]
-	(run-insert :scoringsup
+(defn insert-scoringsup [{:keys [playerID year PPA SHA db-conn]}]
+	(run-insert db-conn :scoringsup
 						  [:playerID :year :PPA :SHA ]
 							[playerID 	
 							(Integer. (if (clojure.string/blank? year) "0" year)) 
@@ -243,8 +243,8 @@
 							(Integer. (if (clojure.string/blank? PostGWG) "0" PostGWG))
 							(Integer. (if (clojure.string/blank? PostSOG) "0" PostSOG))]))
 							
-(defn insert-seriespost [{:keys [year round series tmIDWinner lgIDWinner tmIDLoser lgIDLoser W L T GoalsWinner GoalsLoser note]}]
-	(run-insert :seriespost
+(defn insert-seriespost [{:keys [year round series tmIDWinner lgIDWinner tmIDLoser lgIDLoser W L T GoalsWinner GoalsLoser note db-conn]}]
+	(run-insert db-conn :seriespost
 		[:year :round :series :tmIDWinner :lgIDWinner :tmIDLoser :lgIDLoser :W :L :T :GoalsWinner :GoalsLoser :note]
 		[(Integer. (if (clojure.string/blank? year) "0" year))  
 		 round series tmIDWinner lgIDWinner tmIDLoser lgIDLoser 
@@ -257,8 +257,8 @@
 			
 (defn insert-teamsplits [{:keys [ year lgID tmID hW hL hT hOTL rW rL rT rOTL SepW SepL SepT SepOL OctW OctL OctT OctOL NovW 
 																 NovL NovT NovOL DecW DecL DecT DecOL JanW JanL JanT JanOL FebW FebL FebT FebOL MarW MarL 
-																 MarT MarOL AprW AprL AprT AprOL]}]
-	(run-insert :teamsplits
+																 MarT MarOL AprW AprL AprT AprOL db-conn]}]
+	(run-insert db-conn :teamsplits
 		[:year :lgID :tmID :hW :hL :hT :hOTL :rW :rL :rT :rOTL :SepW :SepL :SepT :SepOL :OctW :OctL :OctT :OctOL :NovW
 		 :NovL :NovT :NovOL :DecW :DecL :DecT :DecOL :JanW :JanL :JanT :JanOL :FebW :FebL :FebT :FebOL :MarW :MarL
 		 :MarT :MarOL :AprW :AprL :AprT :AprOL]	
@@ -305,8 +305,8 @@
 		(Integer. (if (clojure.string/blank? AprT) "0" AprT))
 		(Integer. (if (clojure.string/blank? AprOL) "0" AprOL))]))
 		
-(defn insert-teamvsteam [{:keys [year lgID tmID oppID W L T OTL]}]
-	(run-insert :teamvsteam
+(defn insert-teamvsteam [{:keys [year lgID tmID oppID W L T OTL db-conn]}]
+	(run-insert db-conn :teamvsteam
 		[:year :lgID :tmID :oppID :W :L :T :OTL]
 		[(Integer. (if (clojure.string/blank? year) "0" year))
 		 lgID tmID oppID 
@@ -317,8 +317,8 @@
 		
 (defn insert-teams [{:keys [ year lgID tmID franchID confID divID rank playoff G W L T 
 														OTL Pts SoW SoL GF GA name PIM BenchMinor PPG PPC SHA PKG 
-														PKC SHF]}]
-	(run-insert :teams
+														PKC SHF db-conn]}]
+	(run-insert db-conn :teams
 		[:year :lgID :tmID :franchID :confID :divID :rank :playoff :G :W :L :T 
 		 :OTL :Pts :SoW :SoL :GF :GA :name :PIM :BenchMinor :PPG :PPC :SHA :PKG :PKC :SHF]
 		[(Integer. (if (clojure.string/blank? year) "0" year))
@@ -345,8 +345,8 @@
 		 (Integer. (if (clojure.string/blank? PKC) "0" PKC))  
 		 (Integer. (if (clojure.string/blank? SHF) "0" SHF))]))
 
-(defn insert-teamshalf [{:keys [ year lgID tmID half rank G W L T GF GA]}]
-	(run-insert :teamshalf
+(defn insert-teamshalf [{:keys [ year lgID tmID half rank G W L T GF GA db-conn]}]
+	(run-insert db-conn :teamshalf
 		[:year :lgID :tmID :half :rank :G :W :L :T :GF :GA]
 		[ (Integer. (if (clojure.string/blank? year) "0" year))
 		  lgID tmID  
@@ -362,8 +362,8 @@
 
 (defn insert-teamspost [{:keys [ year lgID tmID G W L T 
 														GF GA BenchMinor PPG PPC SHA PKG 
-														PKC SHF]}]
-	(run-insert :teamspost
+														PKC SHF db-conn]}]
+	(run-insert db-conn :teamspost
 		[:year :lgID :tmID :G :W :L :T 
 		 :GF :GA :BenchMinor :PPG :PPC :SHA :PKG :PKC :SHF]
 		[(Integer. (if (clojure.string/blank? year) "0" year))
@@ -384,8 +384,8 @@
 
 
 (defn insert-teamssc [{:keys [ year lgID tmID G W L T 
-														GF GA PIM]}]
-	(run-insert :teamssc
+														GF GA PIM db-conn]}]
+	(run-insert db-conn :teamssc
 		[:year :lgID :tmID :G :W :L :T 
 		 :GF :GA :PIM]
 		[(Integer. (if (clojure.string/blank? year) "0" year))
