@@ -1,4 +1,4 @@
-DROP TABLE abbrev;
+DROP TABLE IF EXISTS abbrev;
 CREATE TABLE abbrev(
   type varchar(16) NOT NULL,
   code varchar(6) NOT NULL,
@@ -6,7 +6,7 @@ CREATE TABLE abbrev(
   PRIMARY KEY (type, code)
 );
 
-DROP TABLE awardscoaches;
+DROP TABLE IF EXISTS awardscoaches;
 CREATE TABLE awardscoaches(
   coachid varchar(10) NOT NULL,
   award varchar(32) NOT NULL,
@@ -16,7 +16,7 @@ CREATE TABLE awardscoaches(
   PRIMARY KEY (coachid , year , award )
 );
 
-DROP TABLE awardsmisc;
+DROP TABLE IF EXISTS awardsmisc;
 CREATE TABLE awardsmisc(
   name varchar(48) NOT NULL,
   id varchar(10) NOT NULL,
@@ -28,7 +28,7 @@ CREATE TABLE awardsmisc(
 );
 
 
--- DROP TABLE awardsplayers;
+DROP TABLE IF EXISTS awardsplayers;
 CREATE TABLE awardsplayers(
   playerid varchar(10) NOT NULL,
   award varchar(32) NOT NULL,
@@ -39,7 +39,7 @@ CREATE TABLE awardsplayers(
   PRIMARY KEY (playerid , year , award )
 );
 
--- DROP TABLE coaches;
+DROP TABLE IF EXISTS coaches;
 CREATE TABLE coaches(
   coachid varchar(10) NOT NULL,
   year integer NOT NULL,
@@ -58,7 +58,7 @@ CREATE TABLE coaches(
   PRIMARY KEY (coachid , year , tmid , stint )
 );
 
--- DROP TABLE coaches_beta;
+DROP TABLE IF EXISTS coaches_beta;
 CREATE TABLE coaches_beta(
   coachid varchar(10) NOT NULL,
   year integer NOT NULL,
@@ -78,7 +78,7 @@ CREATE TABLE coaches_beta(
   PRIMARY KEY (coachid , year , tmid , stint )
 );
 
--- DROP TABLE combinedshutouts;
+DROP TABLE IF EXISTS combinedshutouts;
 CREATE TABLE combinedshutouts(
   year integer NOT NULL,
   month integer NOT NULL,
@@ -91,7 +91,7 @@ CREATE TABLE combinedshutouts(
   PRIMARY KEY (year , month , date , tmid )
 );
 
--- DROP TABLE goalies;
+DROP TABLE IF EXISTS goalies;
 CREATE TABLE goalies(
   playerid varchar(10) NOT NULL,
   year integer NOT NULL,
@@ -119,7 +119,7 @@ CREATE TABLE goalies(
   PRIMARY KEY (playerid , year , stint , tmid )
 );
 
--- DROP TABLE goaliessc;
+DROP TABLE IF EXISTS goaliessc;
 CREATE TABLE goaliessc(
   playerid varchar(10) NOT NULL,
   year integer NOT NULL,
@@ -135,7 +135,7 @@ CREATE TABLE goaliessc(
   PRIMARY KEY (playerid , year , tmid )
 );
 
--- DROP TABLE goaliesshoutout;
+DROP TABLE IF EXISTS goaliesshootout;
 CREATE TABLE goaliesshootout(
   playerid varchar(10) NOT NULL,
   year integer NOT NULL,
@@ -148,7 +148,7 @@ CREATE TABLE goaliesshootout(
   PRIMARY KEY (playerid , year , stint , tmid )
 );
 
--- DROP TABLE hof;
+DROP TABLE IF EXISTS hof;
 CREATE TABLE hof(
   year integer NOT NULL DEFAULT 0,
   hofid varchar(10) NOT NULL,
@@ -157,7 +157,7 @@ CREATE TABLE hof(
   PRIMARY KEY (year , hofid , category )
 );
 
--- DROP TABLE master;
+DROP TABLE IF EXISTS master;
 CREATE TABLE master(
   id integer NOT NULL,
   playerid varcha(10) NOT NULL,
@@ -193,7 +193,7 @@ CREATE TABLE master(
   PRIMARY KEY (id )
 );
 
--- DROP TABLE scoring;
+DROP TABLE IF EXISTS scoring;
 CREATE TABLE scoring
 (
   playerid varchar(10) NOT NULL,
@@ -230,7 +230,7 @@ CREATE TABLE scoring
   PRIMARY KEY (playerid , year , stint , tmid , pos )
 );
 
--- DROP TABLE scoringsc;
+DROP TABLE IF EXISTS scoringsc;
 CREATE TABLE scoringsc(
   playerid varchar(10) NOT NULL,
   year integer NOT NULL,
@@ -246,7 +246,7 @@ CREATE TABLE scoringsc(
   PRIMARY KEY (playerid , year , stint , tmid , pos )
 );
 
--- DROP TABLE  scoringshootout;
+DROP TABLE IF EXISTS scoringshootout;
 CREATE TABLE scoringshootout(
   playerid varchar(10) NOT NULL,
   year integer NOT NULL,
@@ -258,7 +258,7 @@ CREATE TABLE scoringshootout(
   PRIMARY KEY (playerid , year , stint , tmid )
 );
 
--- DROP TABLE scoringsup;
+DROP TABLE IF EXISTS scoringsup;
 CREATE TABLE scoringsup(
   playerid varchar(10) NOT NULL,
   year integer NOT NULL,
@@ -267,7 +267,7 @@ CREATE TABLE scoringsup(
   PRIMARY KEY (playerid , year )
 );
 
--- DROP TABLE seriespost;
+DROP TABLE IF EXISTS seriespost;
 CREATE TABLE seriespost(
   year integer NOT NULL,
   round varchar(4) NOT NULL,
@@ -285,7 +285,7 @@ CREATE TABLE seriespost(
   PRIMARY KEY (year , round , tmidwinner )
 );
 
--- DROP TABLE teamsplits;
+DROP TABLE IF EXISTS teamsplits;
 CREATE TABLE teamsplits
 (
   year integer NOT NULL,
@@ -334,7 +334,7 @@ CREATE TABLE teamsplits
   PRIMARY KEY (year , lgid , tmid )
 );
 
--- DROP TABLE teamvsteam;
+DROP TABLE IF EXISTS teamvsteam;
 CREATE TABLE teamvsteam
 (
   year integer NOT NULL,
@@ -348,7 +348,7 @@ CREATE TABLE teamvsteam
   PRIMARY KEY (year , lgid , tmid , oppid )
 );
 
--- DROP TABLE teams;
+DROP TABLE IF EXISTS teams;
 CREATE TABLE teams
 (
   year integer NOT NULL,
@@ -381,7 +381,7 @@ CREATE TABLE teams
   PRIMARY KEY (year , lgid , tmid )
 );
 
--- DROP TABLE teamshalf;
+DROP TABLE IF EXISTS teamshalf;
 CREATE TABLE teamshalf(
   year integer NOT NULL,
   lgid varchar(4) NOT NULL,
@@ -397,7 +397,7 @@ CREATE TABLE teamshalf(
   PRIMARY KEY (year , lgid , tmid , half )
 );
 
--- DROP TABLE teamspost;
+DROP TABLE IF EXISTS teamspost;
 CREATE TABLE teamspost(
   year integer NOT NULL,
   lgid varchar(4) NOT NULL,
@@ -418,7 +418,7 @@ CREATE TABLE teamspost(
   PRIMARY KEY (year , lgid , tmid )
 );
 
--- DROP TABLE teamssc;
+DROP TABLE IF EXISTS teamssc;
 CREATE TABLE teamssc(
   year integer NOT NULL,
   lgid varchar(4) NOT NULL,
