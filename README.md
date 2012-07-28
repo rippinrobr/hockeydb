@@ -127,21 +127,31 @@ are listed below in no particular order.
 Books:
 
   National Hockey League Guide (various years)
+  
   National Hockey League Official Record Book (1982-83 and 1983-84)
+  
   National Hockey League Official Guide & Record Book (1984-85 to present)
+  
   The Stanley Cup Records and Statistics (various years)
+  
   World Hockey Association Media Guide (various years)
+  
   WHA Schedule & Statistics (1974-75)
+    
   The Sporting News Hockey Guide (various years)
+  
   Official NHL Record Book 1917-64
+  
   The Complete Historical and Statistical Reference to the World Hockey
     Association 1972-1979, by Scott Surgent; Xaler Press (7th edition, 2004;
     8th edition, 2008)
+  
   Total Hockey; Total Sports Publishing (1st edition, 1998; 2nd edition, 2000)
-  The Encyclopedia of Hockey, by Robert A. Styer; A.S. Barnes (2nd edition,
-    1973)
-  The Hockey Encyclopedia, by Stan Fischler and Shirley Walton Fischler;
-    Macmillan (1983)
+  
+  The Encyclopedia of Hockey, by Robert A. Styer; A.S. Barnes (2nd edition, 1973)
+  
+  The Hockey Encyclopedia, by Stan Fischler and Shirley Walton Fischler; Macmillan (1983)
+
   The Trail of the Stanley Cup (Vol. 1, 2, and 3), by Charles L. Coleman
 
 Periodicals:
@@ -152,43 +162,61 @@ On-line sources:
 
   ESPN.com
         http://www.espn.com/nhl/statistics
+
   Find A Grave
         http://www.findagrave.com
+
   The Goaltender Home Page (Doug Norris)
         http://hockeygoalies.org
+
   History Of NHL Trades
         http://nhltradeshistory.blogspot.com
+
   Hockey Research Association
         http://www.hockeyresearch.com/stats
+
   Hockey-Reference.com (Justin Kubatko)
         http://www.hockey-reference.com
+
   Hockey Summary Project
         http://sports.groups.yahoo.com/group/hockey_summary_project/
         http://hsp.flyershistory.com
         (previously at http://www.shrpsports.com/hsp)
+
   Internet Hockey Database (Ralph Slate)
         http://www.hockeydb.com
+
   Legends of Hockey.net (Hockey Hall of Fame)
         http://www.legendsofhockey.net/html/search.htm
+
   LostHockey.com
         http://www.losthockey.com
+
   National Hockey League
         http://www.nhl.com
+
   NHL Hockey Shootout Statistics
         http://jeays.net/shootout/index.htm
+
   NHL Shootouts
         http://www.nhlshootouts.com
+
   North American Pro Hockey
         http://www.ottawavalleyonline.com/sites/tomking_01/index.html
+
   Puckerings
         http://www.puckerings.com
+
   Society for International Hockey Research
         http://www.sihrhockey.org
+
   The Sports Network
         http://www.sportsnetwork.com
+
   USA Today hockey stats archive
         http://www.usatoday.com/sports/hockey
         http://www.usatoday.com/sports/hockey/archive.htm
+
   Yahoo Sports
         http://sports.yahoo.com/nhl
 
