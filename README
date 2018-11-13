@@ -1,4 +1,5 @@
-THIS PROJECT IS DEAD AND IS BEING REPLACED BY THIS ONE  https://github.com/rippinrobr/hockey-databank 
+# THIS PROJECT IS DEAD.  IT IS REPLACED BY THIS ONE  https://github.com/rippinrobr/hockey-databank 
+
 It contains the CSV files in addition to data and schema backups for SQLite now and soon it will support
 MongoDB, MySQL and Postgres
 
